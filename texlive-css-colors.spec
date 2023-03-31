@@ -1,6 +1,6 @@
 Name:		texlive-css-colors
 Version:	54512
-Release:	1
+Release:	2
 Summary:	Named colors for web-safe design
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/css-colors

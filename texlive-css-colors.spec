@@ -3,7 +3,7 @@ Version:	54512
 Release:	2
 Summary:	Named colors for web-safe design
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/css-colors
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/css-colors
 License:	lppl gpl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/css-colors.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/css-colors.doc.r%{version}.tar.xz

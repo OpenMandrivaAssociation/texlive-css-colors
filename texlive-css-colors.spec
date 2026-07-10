@@ -1,37 +1,24 @@
-Name:		texlive-css-colors
-Version:	54512
-Release:	2
+%global tl_name css-colors
+%global tl_revision 54512
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.02
+Release:	%{tl_revision}.1
 Summary:	Named colors for web-safe design
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/css-colors
 License:	lppl gpl
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/css-colors.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/css-colors.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/css-colors.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/css-colors.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package defines web-safe colors for use with D.P.
-Carlisle's color package. It is intended for both authors and
-package writers (e.g. to create Beamer color themes).
+This package defines web-safe colors for use with D.P. Carlisle's color
+package. It is intended for both authors and package writers (e.g. to
+create Beamer color themes).
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/css-colors
-%doc %{_texmfdistdir}/doc/latex/css-colors
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
